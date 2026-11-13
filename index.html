@@ -2,25 +2,96 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Регистрация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Запись на тренировку</title>
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <main class="page">
-      <h1>Регистрация на прогулку</h1>
+      <h1>Запись на тренировку</h1>
       <form class="form" action="#" method="post">
-        <!-- TODO fieldset/legend -->
+        <fieldset class="form__group">
+          <legend>Контактные данные</legend>
+          <div class="form__field">
+            <label for="name">Имя</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Введите имя"
+              required
+            />
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="form__field">
+            <label for="phone">Телефон</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+7 (999) 000-00-00"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <legend>Параметры тренировки</legend>
+          <div class="form__field">
+            <label for="date">Дата занятия</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+
+          <div class="form__field">
+            <label for="workout">Направление тренировки</label>
+            <select id="workout" name="workout">
+              <option value="gym">Тренажёрный зал</option>
+              <option value="cardio">Кардио и выносливость</option>
+              <option value="yoga">Йога и растяжка</option>
+              <option value="swimming">Бассейн</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <legend>Выберите время</legend>
+          <label>
+            <input type="radio" name="time" value="09:00" checked /> 09:00
+          </label>
+          <label>
+            <input type="radio" name="time" value="15:00" /> 15:00
+          </label>
+          <label>
+            <input type="radio" name="time" value="19:30" /> 19:30
+          </label>
+        </fieldset>
+
         <div class="form__field">
-          <label>Имя</label><input type="text" placeholder="Введите имя" />
+          <label for="comment">Комментарий</label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows="4"
+            placeholder="Уровень подготовки или пожелания для тренера"
+          ></textarea>
         </div>
+
         <div class="form__field">
-          <label>Email</label
-          ><input type="text" placeholder="name@example.com" />
+          <label>
+            <input type="checkbox" name="agreement" required />
+            Я согласен с правилами посещения клуба
+          </label>
         </div>
-        <!-- TODO radio, checkbox, select, textarea --><button type="submit">
-          Записаться
-        </button>
+
+        <button type="submit">Записаться на тренировку</button>
       </form>
     </main>
   </body>
