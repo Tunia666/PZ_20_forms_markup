@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Регистрация</title>
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
@@ -10,17 +10,89 @@
     <main class="page">
       <h1>Регистрация на прогулку</h1>
       <form class="form" action="#" method="post">
-        <!-- TODO fieldset/legend -->
+        <fieldset class="form__group">
+          <legend>Контактные данные</legend>
+          <div class="form__field">
+            <label for="name">Имя</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Введите имя"
+              required
+            />
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="form__field">
+            <label for="phone">Телефон</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+7 (999) 000-00-00"
+              required
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <legend>Параметры прогулки</legend>
+          <div class="form__field">
+            <label for="date">Дата прогулки</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+
+          <div class="form__field">
+            <label for="route">Маршрут</label>
+            <select id="route" name="route">
+              <option value="center">Исторический центр</option>
+              <option value="north">Северный парк</option>
+              <option value="embankment">Набережная</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <legend>Выберите время</legend>
+          <label class="form__option">
+            <input type="radio" name="time" value="10:00" checked />
+            10:00
+          </label>
+          <label class="form__option">
+            <input type="radio" name="time" value="14:00" />
+            14:00
+          </label>
+          <label class="form__option">
+            <input type="radio" name="time" value="18:00" />
+            18:00
+          </label>
+        </fieldset>
+
         <div class="form__field">
-          <label>Имя</label><input type="text" placeholder="Введите имя" />
+          <label for="comment">Комментарий</label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows="4"
+            placeholder="Дополнительные пожелания"
+          ></textarea>
         </div>
-        <div class="form__field">
-          <label>Email</label
-          ><input type="text" placeholder="name@example.com" />
-        </div>
-        <!-- TODO radio, checkbox, select, textarea --><button type="submit">
-          Записаться
-        </button>
+
+        <label class="form__option">
+          <input type="checkbox" name="agreement" required />
+          Я согласен на обработку персональных данных
+        </label>
+
+        <button type="submit">Записаться</button>
       </form>
     </main>
   </body>
